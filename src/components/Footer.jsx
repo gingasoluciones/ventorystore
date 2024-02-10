@@ -16,7 +16,7 @@ export function Footer(){
                     {/* <div class="col-md-6 maps" > */}
                         {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.492291371422!2d12.4922309!3d41.8902102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1524815927977" width={1000} height={500} frameborder="0" style="border:0" allowfullscreen></iframe> */}
                     {/* </div> */}
-                    <iframe
+                    {/* <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15808.546947656017!2d-72.5038632!3d7.8807589!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66455ce1d18459%3A0xeaf39bd1e7e1be28!2sElectroled%20Cucuta!5e0!3m2!1ses!2sco!4v1687533920828!5m2!1ses!2sco"
                         //   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d349.3228178264762!2d-72.50399615702067!3d7.880797365418204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1687355156506!5m2!1ses!2sco"
                         width="350"
@@ -26,7 +26,7 @@ export function Footer(){
                         allowFullScreen=""
                         aria-hidden="false"
                         tabIndex="0"
-                        />
+                        /> */}
                     </div>
                     <div className="col-lg-4 col-sm-4 px-5">
                         <h3><i className="fa fa-instagram"></i> @gingasoluciones</h3>
