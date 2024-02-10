@@ -2,28 +2,29 @@ import { useEffect,useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { Url } from "./Const"
-export function Categorias(){
-  const [items,setItems] = useState([])
-
+export function Categorias(props){
+  const [items,setItems] = useState([]) 
   const navigate = useNavigate()
-  function cargar(){ console.log("cargar...")
-    const url = "http://localhost/ventory/v4/Api/"
+  const tienda = props.tienda
+  function categoriasCargar(){ console.log("cargar categorias...")
+    console.log("ls ", props.tienda)
     const requestOptions = {
         method: "GET",
         header :{
             "Content-Type" : "application/json"
-        }
+        },
     }
-    fetch(Url +"Metodos/Get.php?action=categorias", requestOptions)
+    const url = Url +"Metodos/Get.php?action=categorias&tienda="+props.tienda; console.log("url",url)
+    fetch(url, requestOptions)
     .then(response => response.json())
-    .then(data => { console.log(data)
+    .then(data => { console.log("data Categorias",data)
         setItems(data)
     })
     .catch(error=> console.log(error))
 
   }
   useEffect(()=>{ 
-    cargar()
+    categoriasCargar()
   },[])
 
   const handleNav=(url)=>{
@@ -36,8 +37,8 @@ export function Categorias(){
     <ul className="list-unstyled">
       { items.map(dato=>(
         <li key={dato.des} className="my-2">
-          {/* <Link key={dato.des} categoria={ dato.des } to={`/categoria/${ dato.des }`}>{ dato.des }</Link> */}
-          <a key={dato.des} href={`/categoria/${ dato.des }`}  >{ dato.des }</a>
+          <Link key={dato.des} categoria={ dato.des } to={`/${tienda}/categoria/${ dato.des }`}>{ dato.des }</Link>
+          {/* <a key={dato.des} href={`/categoria/${ dato.des }`}  >{ dato.des }</a> */}
         </li>
       )) }
       {/* <a key={dato.id} href="#" onClick={handleNav(dato.des)}>{ dato.des }</a> */}

@@ -5,8 +5,10 @@ import { Categorias } from "../components/Categorias"
 import { Marcas } from "../components/Marcas"
 import { ProductoRow } from "../components/ProductoRow"
 import { Url } from "../components/Const"
-export function Categoria(){ console.log("Categoria")
-    const {busca} = useParams()
+export function Categoria(props){ console.log("Categoria")
+    // const {busca} = useParams()
+    const busca = props.busca
+    console.log("..."+busca)
     const [search, setSearch] = useState('')
     const [items, setItems] = useState([])
 
@@ -16,7 +18,7 @@ export function Categoria(){ console.log("Categoria")
     const isMounted = useRef(false);
     function cargar(){ console.log("Categoria cargar..." + busca)
         //setSearch(params.busca)
-        let url = Const + "/v4/Api/"
+        let url = Url + "/v4/Api/"
         const requestOptions = {
             method: "GET",
             header :{
@@ -24,20 +26,23 @@ export function Categoria(){ console.log("Categoria")
             }
         }
         url= Url + "Metodos/Get.php?action=categoria&busqueda=" + busca
+        console.log("url:" + url)
         fetch(url, requestOptions)
         .then(response => response.json())
         .then(data => { console.log("respuesta..." + url)
             console.log(data)
-            setItems(data.items)
+            if(data.response == "ok")
+                setItems(data.items)
         })
         .catch(error=> console.log(error))
     }
     useEffect(()=>{ 
-        isMounted.current = true;
-        return () => isMounted.current = false;
-        setSearch(busca)
-        console.log("params!!!", busca )
+        // isMounted.current = false;
         cargar()
+        // return () => isMounted.current = true;
+        // setSearch(busca)
+        // console.log("params!!!", busca )
+        
         // setNro(Math.random(100))
         // const url = "http://localhost/ventory/v4/Api/"
         // const requestOptions = {
@@ -70,7 +75,7 @@ export function Categoria(){ console.log("Categoria")
                 <div className="col-10">
                     <div className="container">
                         <div className="row py-3" >
-                        <h2>Categoria: { search }</h2>
+                        <h2>Categoria: { busca }</h2>
                         </div>
                         <div className="row">     
                         <section >

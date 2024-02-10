@@ -1,17 +1,18 @@
-import logo from "../images/logoweb.png"
+import logo from "../images/logoweb.ico"
 export function Footer(){
     return(<>
         <footer className="footer mt-auto bg-dark py-3">
             <nav className="container navbar-dark">
                 <div className="row my-5">
-                    <div className="col-4">
-                        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
-                            <img src={logo} alt="logo" width={190} height={50} />
+                    <div className="col-lg-4 col-sm-6">
+                        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 d-flex" href="#">
+                            <img src={logo} alt="logo" width={65} height={60} />
+                            <p className="px-3 pt-3 h3">Ventory</p>
                         </a>
-                        <h4><i className="fa fa-lightbulb-o"></i>  Av 6 # 15-82 El Páramo - Cucuta</h4>
-                        <h3><i className="fa fa-phone"></i>  300 886 05 53</h3>
+                        <h4 className="pt-4"><i className="fa fa-lightbulb-o"></i> Cucuta - Colombia</h4>
+                        {/* <h3><i className="fa fa-phone"></i>  contacto</h3> */}
                     </div>
-                    <div className="col-4">
+                    <div className="col-lg-4 col-sm-6">
                     {/* <div class="col-md-6 maps" > */}
                         {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.492291371422!2d12.4922309!3d41.8902102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1524815927977" width={1000} height={500} frameborder="0" style="border:0" allowfullscreen></iframe> */}
                     {/* </div> */}
@@ -27,9 +28,9 @@ export function Footer(){
                         tabIndex="0"
                         />
                     </div>
-                    <div className="col-4 px-4">
-                        <h3><i className="fa fa-instagram"></i> @electroleducuta</h3>
-                        <h3><i className="fa fa-facebook"></i> Electroled Cucuta</h3>
+                    <div className="col-lg-4 col-sm-4 px-5">
+                        <h3><i className="fa fa-instagram"></i> @gingasoluciones</h3>
+                        <h3><i className="fa fa-facebook"></i> ginga soluciones</h3>
                         <br></br>
                         <br></br>
                         <br></br>

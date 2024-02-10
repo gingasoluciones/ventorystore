@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /mystore/
+RewriteCond %{REQUESTE_FILENAME} !=f 
+RewriteCond %{REQUESTE_FILENAME} !=d
+RewriteCond %{REQUESTE_FILENAME} !=l
+RewriteRule . /app/index.html [L] 
+</IfModule> 

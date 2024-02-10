@@ -4,13 +4,14 @@ import { Categorias } from "../components/Categorias"
 import { Marcas } from "../components/Marcas"
 import { ProductoRow } from "../components/ProductoRow"
 import { Url } from "../components/Const"
-export function Marca(){
-    const params = useParams()
+export function Marca(props){ console.log("props MArca", props)
+    const params = useParams(); console.log("params", params)
+    const busca = props.busca
     const [search, setSearch] = useState('')
     const [items, setItems] = useState([])
     let imagen = ""
-    function cargar(){ console.log("Marca cargar..." + params.busca)
-        setSearch(params.busca)
+    function cargar(){ console.log("Marca cargar..." + busca)
+        setSearch(busca)
         let url = "http://localhost/ventory/v4/Api/"
         const requestOptions = {
             method: "GET",
@@ -18,7 +19,7 @@ export function Marca(){
                 "Content-Type" : "application/json"
             }
         }
-        url= Url + "Metodos/Get.php?action=marca&busqueda=" + params.busca
+        url= Url + "Metodos/Get.php?action=marca&busqueda=" + busca
         fetch(url, requestOptions)
         .then(response => response.json())
         .then(data => { console.log("respuesta..." + url)
@@ -27,9 +28,9 @@ export function Marca(){
         })
         .catch(error=> console.log(error))
     }
-    useEffect(()=>{ 
-        cargar()
-    },[search])
+    // useEffect(()=>{ 
+    //     cargar()
+    // },[search])
 
     return(<>
         <div className="container-fluid">

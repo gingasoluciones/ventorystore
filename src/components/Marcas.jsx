@@ -1,17 +1,17 @@
 import { useEffect,useState } from "react"
 import { Link } from "react-router-dom"
 import { Url } from "./Const"
-export function Marcas(){
+export function Marcas(props){
   const [items,setItems] = useState([])
-  function cargar(){ console.log("cargar...")
-    const url = "http://localhost/ventory/v4/Api/"
+  function marcasCargar(){ console.log("cargar...")
     const requestOptions = {
         method: "GET",
         header :{
             "Content-Type" : "application/json"
         }
     }
-    fetch(Url +"Metodos/Get.php?action=marcas", requestOptions)
+    let url = Url +"Metodos/Get.php?action=marcas&tienda="+props.tienda; console.log("url",url)
+    fetch(url, requestOptions)
     .then(response => response.json())
     .then(data => { console.log(data)
         setItems(data)
@@ -20,7 +20,7 @@ export function Marcas(){
 
   }
   useEffect(()=>{ 
-    cargar()
+    marcasCargar()
   },[])
     return(<>
         <aside className="bd-aside text-muted align-self-start mb-3 mb-xl-5 px-2">
@@ -29,8 +29,8 @@ export function Marcas(){
     <ul className="list-unstyled">
       { items.map(dato=>(
         <li key={dato.des} className="my-2">
-          <a key={dato.id} href={`/marca/${ dato.des }`}>{ dato.des }</a>
-          {/* <Link key={dato.id} to={`/categoria/${ dato.des }`} className="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">{dato.des}</Link> */}
+          {/* <a key={dato.id} href={`/marca/${ dato.des }`}>{ dato.des }</a> */}
+          <Link key={dato.id} to={`/marca/${ dato.des }`} className="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">{dato.des}</Link>
         </li>
       )) }
       {/* <li className="my-2">

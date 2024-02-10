@@ -1,9 +1,9 @@
 import '../css/Carousel.css'
-import img01 from "../images/01.jpg"
-import img02 from "../images/02.jpg"
-import img03 from "../images/03.jpg"
-import img04 from "../images/04.jpg"
-import img05 from "../images/05.jpg"
+import img01 from "../images/slider01.png"
+import img02 from "../images/slider02.png"
+import img03 from "../images/slider03.png"
+// import img04 from "../images/04.jpg"
+// import img05 from "../images/05.jpg"
 export function Carrousel(){
     return(<>
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -11,7 +11,7 @@ export function Carrousel(){
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            {/* <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button> */}
             </div>
             <div className="carousel-inner">
             <div className="carousel-item active">
@@ -20,8 +20,8 @@ export function Carrousel(){
 
                 <div className="container">
                 <div className="carousel-caption text-start">
-                    <h1>Electroled.</h1>
-                    <p>Materiales electricos para la construcción.</p>
+                    <h1>Ventory.</h1>
+                    <p>.</p>
                     {/* <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p> */}
                 </div>
                 </div>
@@ -48,7 +48,7 @@ export function Carrousel(){
                 </div>
                 </div>
             </div>
-            <div className="carousel-item">
+            {/* <div className="carousel-item">
             <img className="bd-placeholder-img" src={ img04}  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
                 <div className="container">
@@ -58,7 +58,7 @@ export function Carrousel(){
                     <p><a className="btn btn-lg btn-warning" href="#">Ver Catalogo</a></p>
                 </div>
                 </div>
-            </div>
+            </div> */}
             {/* <div className="carousel-item">
             <img className="bd-placeholder-img" src={ img05}  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
